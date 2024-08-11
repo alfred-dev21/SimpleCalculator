@@ -10,9 +10,10 @@ namespace Program
         }
         static string message()
         {
-            return "CALCULATOR BY ALFRED_DEV21" +
-                "Instructions:" +
-                "   - type help to learn how to use the calculator effeciently";
+            return "CALCULATOR BY ALFRED_DEV21\n" +
+                "Instructions:\n" +
+                "   - type help to learn how to use the calculator effeciently\n\n" +
+                "Insert instruction: ";
 
         }
         static void Main(string[] args)
@@ -25,6 +26,8 @@ namespace Program
 
                 while (instruction != "done")
                 {
+                    Console.WriteLine("Outcome: ");
+
                     if (instruction == null || instruction.Equals(""))
                     {
                         Console.WriteLine("Insert an expression or command: ");
@@ -35,12 +38,13 @@ namespace Program
                     }
                     else
                     {
-                        Calculator calculator = new Calculator(instruction);
+                        Calculator calculator = new(instruction);
                         string solution = calculator.CalculatorHandler();
 
                         Console.WriteLine(solution);
                     }
 
+                    Console.WriteLine("Insert instruction: ");
                     instruction = Console.ReadLine();
                 }
             }
@@ -48,7 +52,6 @@ namespace Program
             {
                 Console.WriteLine(ex.ToString());
             }
-
             
         }
     }

@@ -16,6 +16,18 @@ public class Calculator
         this.instruction = instruction;
     }
 
+    public Calculator() 
+    {
+        instruction = "";
+    }
+
+    // This is for testing purposes since I will be using a default constructor
+
+    public void SetInstruction(string instruction) 
+    {
+        this.instruction = instruction;
+    }
+
     public string CalculatorHandler()
     {
         if (Regex.IsMatch(instruction, ArithmaticPattern))
@@ -76,7 +88,7 @@ public class Calculator
 
     private string Add(string v1, string v2)
     {
-        double solution = Convert.ToDouble(v1 + Convert.ToDouble(v2));
+        double solution = Convert.ToInt32(v1) + Convert.ToInt32(v2);
         return Convert.ToString(solution);
     }
 }
