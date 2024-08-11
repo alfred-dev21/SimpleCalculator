@@ -52,6 +52,20 @@ public class Calculator
             {
                 instruction = instruction.Replace("sqrt(", "").Replace(")", "");
                 return SquareRoot(instruction);
+            }else if (instruction.StartsWith("sin"))
+            {
+                instruction = instruction.Replace("sin(", "").Replace(")", "");
+                return Sin(instruction);
+            }
+            else if (instruction.StartsWith("tan"))
+            {
+                instruction = instruction.Replace("tan(", "").Replace(")", "");
+                return Tan(instruction);
+            }
+            else if (instruction.StartsWith("cos"))
+            {
+                instruction = instruction.Replace("cos(", "").Replace(")", "");
+                return Cos(instruction);
             }
             return "";
         }
@@ -62,31 +76,49 @@ public class Calculator
         
     }
 
-    private string SquareRoot(string instruction)
+    private static string Cos(string instruction)
+    {
+        double solution = Math.Cos(Convert.ToDouble(instruction)*(Math.PI/180));
+        return Convert.ToString(solution);
+    }
+
+    private static string Tan(string instruction)
+    {
+        double solution = Math.Tan(Convert.ToDouble(instruction)*(Math.PI / 180));
+        return Convert.ToString(solution);
+    }
+
+    private static string Sin(string instruction)
+    {
+        double solution = Math.Sin(Convert.ToDouble(instruction)*(Math.PI / 180));
+        return Convert.ToString(solution);
+    }
+
+    private static string SquareRoot(string instruction)
     {
         double solution = Math.Sqrt(Convert.ToDouble(instruction));
         return Convert.ToString(solution);
     }
 
-    private string Division(string v1, string v2)
+    private static string Division(string v1, string v2)
     {
         double solution = Convert.ToDouble(v1)/Convert.ToDouble(v2);
         return Convert.ToString(solution);
     }
 
-    private string Multiplication(string v1, string v2)
+    private static string Multiplication(string v1, string v2)
     {
         double solution = Convert.ToDouble(v1)*Convert.ToDouble(v2);
         return Convert.ToString(solution);
     }
 
-    private string Subtraction(string v1, string v2)
+    private static string Subtraction(string v1, string v2)
     {
         double solution = Convert.ToDouble(v1) - Convert.ToDouble(v2);
         return Convert.ToString(solution);
     }
 
-    private string Add(string v1, string v2)
+    private static string Add(string v1, string v2)
     {
         double solution = Convert.ToInt32(v1) + Convert.ToInt32(v2);
         return Convert.ToString(solution);

@@ -6,13 +6,19 @@ namespace Program
     {
         static string help()
         {
-            return "";
+            return "How to use the calculator:\n" +
+                "   * insure that there is a space between the expression for arithmetic operations such as +,-,* and /\n" +
+                "       eg 1+1 is not allowed but 1 + 1 is. For the rest 1 - 1, 1 * 1, 1 / 1\n" +
+                "   * insure that there is no space with functional operations cos, tan, sqrt and sin\n" +
+                "       eq sin(20) is correct, sqrt(4), etc\n";
         }
+
         static string message()
         {
             return "CALCULATOR BY ALFRED_DEV21\n" +
                 "Instructions:\n" +
-                "   - type help to learn how to use the calculator effeciently\n\n" +
+                "   - type help to learn how to use the calculator effeciently\n" +
+                "Otherwise you can go ahead and use the calculator\n\n" +
                 "Insert instruction: ";
 
         }
